@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+   <head>
+      <meta charset="utf-8">
+   </head>
+
+   <body style="height: 100%; margin: 0">
+      <div id="container" style="height: 100%"></div>
+      <script type="text/javascript" src="/static/js/echarts.min.js"></script>
+      <script type="text/javascript">
+         var dom = document.getElementById("container");
+         var myChart = echarts.init(dom);
+         option = {
+            title: {
+               text: '天津每个地区平均房价大于20000的平均房价',
+               subtext: '来自链家网',
+               x: 'center'
+            },
+            tooltip: {
+               trigger: 'item',
+               formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+               orient: 'vertical',
+               left: 'left',
+               data:
+               {% autoescape false %}
+                   {{keyset}}
+               {% endautoescape %}
+            },
+            series: [{
+               name: '地区',
+               type: 'pie',
+               radius: '55%',
+               center: ['50%', '60%'],
+               data:
+                        {% autoescape false %}
+                             {{values}},
+                         {% endautoescape %}
+
+               itemStyle: {
+                  emphasis: {
+                     shadowBlur: 10,
+                     shadowOffsetX: 0,
+                     shadowColor: 'rgba(0, 0, 0, 0.5)'
+                  }
+               }
+            }]
+         };;
+         if(option && typeof option === "object") {
+            myChart.setOption(option, true);
+         }
+      </script>
+   </body>
+
+</html>

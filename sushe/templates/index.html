@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="<%=basePath%>">
+<title>校园宿舍管理系统</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <link href="../static/css/Style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<center>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<table width="684" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td height="292" align="center" valign="top"
+					background="../static/Images/LoginBg.jpg">
+					<table width="350" height="201" border="0" cellpadding="0"
+						cellspacing="0">
+						<tr>
+							<td height="72" align="center"><h3>校园宿舍管理系统</h3></td>
+						</tr>
+						<tr>
+							<td align="center" valign="top">
+							<!--相当于这个   <url-pattern>/login</url-pattern>  当点击表单提交时   会将这个表单的信息提交给 <servlet-class>处理类<srvlet-class>-->
+								<form name="form1" action="login" method="post"
+									onSubmit="return mycheck()">
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td height="30" colspan="2" align="center" class="STYLE2"><span
+												style="color: red;"> </span></td>
+										</tr>
+										<tr>
+											<td height="30" align="right" class="STYLE2">身份：</td>
+											<td align="left"><select name="Type" id="Type">
+													<option value="">请选择</option>
+													<option value="系统">系统管理员</option>
+													<option value="楼宇">楼宇管理员</option>
+													<option value="学生">学生</option>
+											</select></td>
+										</tr>
+										<tr>
+											<td width="37%" height="30" align="right" class="STYLE2">用户名：</td>
+											<td width="300" align="left"><input type="text"
+												name="username" id="username" class="text1" /></td>
+										</tr>
+										<tr>
+											<td height="30" align="right" class="STYLE2">密码：</td>
+											<td align="left"><input type="password" name="password"
+												id="Password" class="text1" /></td>
+										</tr>
+										<tr>
+											<td height="30" colspan="2" align="center"><label>
+													<input type="submit" name="button" id="button" value="登录">
+											</label></td>
+										</tr>
+									</table>
+								</form>
+
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+
+
+	</center>
+</body>
+</html>

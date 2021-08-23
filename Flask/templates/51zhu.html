@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+	</head>
+
+	<body style="height: 100%; margin: 0">
+		<div id="container" style="height: 100%"></div>
+		<script type="text/javascript" src="/static/js/echarts.min.js"></script>
+		<script type="text/javascript">
+			var myChart = echarts.init(document.getElementById("container"));
+			myChart.setOption({
+                title:{
+                    text:'张淼',
+                    subtext:'zhangsanshui',
+                    x:'center'
+                },
+				xAxis: {
+                    type: 'category',
+                    data:
+                    {% autoescape false %}
+                    {{keyset}}
+                    {% endautoescape %}
+                },
+				yAxis:{
+				    type:"value"
+                },
+
+				tooltip:{},
+				series: [{
+					data:
+					{% autoescape false %}
+                          {{values}},
+                     {% endautoescape %}
+					type: 'bar'
+				}]
+			});
+		</script>
+	</body>
+
+</html>
